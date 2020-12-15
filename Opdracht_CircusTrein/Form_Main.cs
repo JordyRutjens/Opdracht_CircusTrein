@@ -19,33 +19,22 @@ namespace Opdracht_CircusTrein
         }
 
         Train train = new Train();
-        public enum AnimalType
-        {
-            Meat,
-            Plants
-        };
-        public enum AnimalSize
-        {
-            Small,
-            Medium,
-            Large
-        };
-
-        public AnimalType animalType;
-        public AnimalSize animalSize;
 
         public Form_Main()
         {
             InitializeComponent();
-            cmbAnimalSize.DataSource = Enum.GetValues(typeof(AnimalSize));
-            cmbAnimalType.DataSource = Enum.GetValues(typeof(AnimalType));
-            
+            cmbAnimalSize.DataSource = Enum.GetValues(typeof(Animal.AnimalSize));
+            cmbAnimalType.DataSource = Enum.GetValues(typeof(Animal.AnimalType));
+
         }
 
         private void btnAddAnimal_Click(object sender, EventArgs e)
         {
-            Enum.TryParse<AnimalType>(cmbAnimalType.SelectedValue.ToString(), out animalType);
-            Enum.TryParse<AnimalSize>(cmbAnimalSize.SelectedValue.ToString(), out animalSize);
+            Animal.AnimalType animalType;
+            Animal.AnimalSize animalSize;
+            Enum.TryParse<Animal.AnimalType>(cmbAnimalType.SelectedValue.ToString(), out animalType);
+            Enum.TryParse<Animal.AnimalSize>(cmbAnimalSize.SelectedValue.ToString(), out animalSize);
+
             Animal addedAnimal = new Animal(animalType, animalSize);
             train.AddAnimalsToWagon(addedAnimal);
             UpdateListBox();

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Opdracht_CircusTrein
 {
-    class Train
+    public class Train
     {
         public List<TrainWagon> wagonCount = new List<TrainWagon>();
 
         public void AddAnimalsToWagon(Animal animalToAdd)
         {   
-            bool NewWagonNeeded = true; //------
+            bool NewWagonNeeded = true;
 
             for (int i = 0; i < wagonCount.Count; i++)
             {

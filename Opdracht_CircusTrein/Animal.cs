@@ -6,19 +6,31 @@ using System.Threading.Tasks;
 
 namespace Opdracht_CircusTrein
 {
-    class Animal
+    public class Animal
     {
+        public enum AnimalType
+        {
+            Meat,
+            Plants
+        };
+        public enum AnimalSize
+        {
+            Small,
+            Medium,
+            Large
+        };
 
-        private Form_Main.AnimalSize animalSize;
-        private Form_Main.AnimalType animalType;
+        public AnimalType animalType;
+        public AnimalSize animalSize;
+
         public int animalValue;
 
-        public Form_Main.AnimalSize GetAnimalSize
+        public AnimalSize GetAnimalSize
         {
             get { return animalSize; }
             set { animalSize = value; }
         }
-        public Form_Main.AnimalType GetAnimalType
+        public AnimalType GetAnimalType
         {
             get { return animalType; }
             set { animalType = value; }
@@ -33,7 +45,7 @@ namespace Opdracht_CircusTrein
 
         public int PointsToAdd { get; private set; }
 
-        public Animal(Form_Main.AnimalType type, Form_Main.AnimalSize size)
+        public Animal(AnimalType type, AnimalSize size)
         {
             animalSize = size;
             animalType = type;
@@ -41,13 +53,13 @@ namespace Opdracht_CircusTrein
 
             switch (GetAnimalSize)
             {
-                case Form_Main.AnimalSize.Small:
+                case AnimalSize.Small:
                     PointsToAdd = 1;
                     break;
-                case Form_Main.AnimalSize.Medium:
+                case AnimalSize.Medium:
                     PointsToAdd = 3;
                     break;
-                case Form_Main.AnimalSize.Large:
+                case AnimalSize.Large:
                     PointsToAdd = 5;
                     break;
             }
