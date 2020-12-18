@@ -37,7 +37,7 @@ namespace Opdracht_CircusTrein
             }
         }
 
-        public List<Animal> GetWagonAnimals(int id)
+        public List<Animal> GetAnimalFromWagon(int id)
         {
             return wagonCount[id].GetAllAnimals();
         }

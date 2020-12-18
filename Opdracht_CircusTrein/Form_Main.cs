@@ -56,7 +56,7 @@ namespace Opdracht_CircusTrein
         private void lsbTrainMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             lsbCurrentAnimals.Items.Clear();
-            foreach (var item in train.GetWagonAnimals(lsbTrainMain.SelectedIndex))
+            foreach (var item in train.GetAnimalFromWagon(lsbTrainMain.SelectedIndex))
             {
                 lsbCurrentAnimals.Items.Add(item);
             }
